@@ -1,58 +1,61 @@
-
-<h1>Contacts List</h1>
+<main>
+  <div class="navbar">
+    <div class="container-navbar">
+      <div class="app-title">
+        <h1>My Contacts <i class="bi bi-person-lines-fill"></i></h1>
+      </div>
+      <div class="buttons-navbar">
+        <button type="button" [routerLink]="['/signup']" routerLinkActive="router-link-active">Logout <i class="bi bi-box-arrow-left"></i></button>
+      </div>
+    </div>
+  </div>
+</main>
 
 <!-- Formulario reactivo para editar contacto -->
 <div *ngIf="editingContact; else showContacts">
     <main class="main-login">
         <section class="form-container">
-    
           <div class="container-signup">
             <h2>Edit Contact</h2>
             <form [formGroup]="editContactForm" (ngSubmit)="saveEditContact()">
-      
+              <!-- Campos del formulario -->
               <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" placeholder="Type the contact name" formControlName="name" />
                 <div class="text-danger" *ngIf="hasErrors('name', 'required')">El nombre es requerido</div>
               </div>
-      
               <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" placeholder="Ingrese su correo electrónico"
                   [ngClass]="{'is-invalid': hasErrors('email', 'required') || hasErrors('email', 'email')}"
                   class="form-control" formControlName="email" />
-                <div class="text-danger" *ngIf="hasErrors('email', 'email')">Email invalid format </div>
+                <div class="text-danger" *ngIf="hasErrors('email', 'email')">Email invalid format</div>
                 <div class="text-danger" *ngIf="hasErrors('email', 'required')">Email is required</div>
               </div>
-    
-               <label for="phone">Phone:</label>
-               <input type="number" id="phone" placeholder="Type a phone number" formControlName="phone" />
-               <div class="text-danger" *ngIf="hasErrors('phone', 'required')">Phone is required</div>
-    
+              <label for="phone">Phone:</label>
+              <input type="number" id="phone" placeholder="Type a phone number" formControlName="phone" />
+              <div class="text-danger" *ngIf="hasErrors('phone', 'required')">Phone is required</div>
               <div class="form-group">
-                <label for="address">Adress:</label>
+                <label for="address">Address:</label>
                 <input type="text" id="address" placeholder="Type the address" formControlName="address" />
               </div>
-    
               <div class="form-group">
                 <label for="description">Description:</label>
                 <input type="text" id="description" placeholder="Type a contact description" formControlName="description" />
               </div>
-    
-               <div class="container-buttons-edit-contact">
+              <div class="container-buttons-edit-contact">
                 <button type="submit" [disabled]="editContactForm.invalid">Edit</button>
-                <button type="submit" (click)="cancelEdit()">Cancel</button>
-               </div>
+                <button type="button" (click)="hiddenFormEdit()">Cancel</button>
+              </div>
             </form>
-    
           </div>
         </section>
-      </main>
+    </main>
 </div>
 
 <ng-template #showContacts>
     <div *ngIf="contacts.length === 0">You don't have any contacts, start creating one.</div>
-    <ul *ngIf="contacts.length > 0">
+    <ul *ngIf="contacts.length > 0" class="container-main-contacts">
         <li *ngFor="let contact of contacts">
             <div class="card-container">
                 <div class="card">
@@ -75,59 +78,11 @@
             </div>
         </li>
     </ul>
-    <button type="submit" (click)="showAddContactForm()"><i class="bi bi-person-fill-add"></i></button>
+
+    <div class="container-button-add-contact">
+      <button type="button" class="button-add-contact" [routerLink]="['/create-contact']" routerLinkActive="router-link-active">
+        <i class="bi bi-person-fill-add"></i>
+      </button>
+    </div>
 </ng-template>
-
-<main class="main-login" *ngIf="showAddContactFormFlag">
-    <section class="form-container">
-
-      <div class="container-signup">
-        <h2>Create Contact</h2>
-        <form [formGroup]="newContactForm" (ngSubmit)="addContact()">
-  
-          <!-- Campo de nombre -->
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Type the contact name" formControlName="name" />
-            <!--Validaciones del nombre -->
-            <div class="text-danger" *ngIf="hasErrors('name', 'required')">El nombre es requerido</div>
-          </div>
-  
-          <!-- Campo de Email -->
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Ingrese su correo electrónico"
-              [ngClass]="{'is-invalid': hasErrors('email', 'required') || hasErrors('email', 'email')}"
-              class="form-control" formControlName="email" />
-            <!--Validaciones del Email-->
-            <div class="text-danger" *ngIf="hasErrors('email', 'email')">Email invalid format </div>
-            <div class="text-danger" *ngIf="hasErrors('email', 'required')">Email is required</div>
-          </div>
-
-          <!-- Campo del telefono -->
-           <label for="phone">Phone:</label>
-           <input type="number" id="phone" placeholder="Type a phone number" formControlName="phone" />
-           <!-- Validacion del telefono -->
-           <div class="text-danger" *ngIf="hasErrors('phone', 'required')">Phone is required</div>
-
-           <!-- Campo de direccion -->
-          <div class="form-group">
-            <label for="address">Adress:</label>
-            <input type="text" id="address" placeholder="Type the address" formControlName="address" />
-          </div>
-
-          <!-- Campo de descripcion -->
-          <div class="form-group">
-            <label for="description">Description:</label>
-            <input type="text" id="description" placeholder="Type a contact description" formControlName="description" />
-          </div>
-
-          <!-- Boton de crear contacto -->
-          <button type="submit" [disabled]="newContactForm.invalid">Create</button>
-          <button type="button" (click)="hideAddContactForm()">Cancel</button>
-        </form>
-
-      </div>
-    </section>
-  </main>
 

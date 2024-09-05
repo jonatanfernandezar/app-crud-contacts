@@ -1,3 +1,17 @@
+<main>
+  <div class="navbar">
+    <div class="container-navbar">
+      <div class="app-title">
+        <h1>Contacts <i class="bi bi-person-lines-fill"></i></h1>
+      </div>
+      <div class="buttons-navbar">
+        <button type="button" [routerLink]="['/login']" routerLinkActive="router-link-active">Login <i class="bi bi-person-up"></i></button>
+        <button type="button" [routerLink]="['/signup']" routerLinkActive="router-link-active">Sign up <i class="bi bi-person-add"></i></button>
+      </div>
+    </div>
+  </div>
+</main>
+
 <main class="main-login">
   <section class="form-container">
 
@@ -51,9 +65,8 @@
           <!--Validaciones del repeat Password-->
           <div class="container-validaciones-password">
             <div class="text-danger" *ngIf="formularioSignUp.get('passwordGroup')?.hasError('passwordsMismatch')">
-              Passwords do not match |
+              Passwords do not match
             </div>
-            <div class="text-danger" *ngIf="hasErrors('repeatPassword', 'required', 'passwordGroup')">  | Type the password</div>
           </div>
         </div>
 

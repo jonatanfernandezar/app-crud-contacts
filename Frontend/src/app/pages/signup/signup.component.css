@@ -1,9 +1,66 @@
 
-/* Estilos para el Sign Up */
 
 * {
   font-family: 'Times New Roman', Times, serif;
 }
+
+/* Estilos para el navbar */
+
+.navbar {
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(123,29,253,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.container-navbar {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  height: 60px;
+}
+
+.app-title {
+  width: 30%;
+}
+
+.app-title h1 {
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.buttons-navbar {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+}
+
+.buttons-navbar button {
+  background-color: rgba(0, 0, 0, 0.526);
+}
+
+.buttons-navbar button:hover {
+  background-color: palevioletred;
+}
+
+.bi-person-up, .bi-person-add {
+  font-size: 1.2rem;
+}
+
+.bi-person-lines-fill {
+  color: orange;
+  margin-left: 15px;
+}
+
+
+/* Estilos para el signup*/
 
 .main-login {
   min-height: 100vh;
@@ -71,7 +128,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: palevioletred;
 }
 
 .switch-form {
@@ -145,9 +202,33 @@ button:hover {
   display: flex;
 }
 
+
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-collapse {
+    display: none;
+  }
+
+  .navbar-collapse.show {
+    display: block;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}
+
 /* Responsivo */
 @media (max-width: 600px) {
   .form-container {
     padding: 1rem;
   }
-} 
+}

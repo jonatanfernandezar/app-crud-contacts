@@ -4,11 +4,12 @@ import { MisContactsComponent } from "../mis-contacts/mis-contacts.component";
 import { ApiContactsService } from '../../services/api-contacts.service';
 import { Contacts } from '../../models/contacts.model';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-user',
   standalone: true,
-  imports: [MisContactsComponent, CommonModule, ReactiveFormsModule],
+  imports: [MisContactsComponent, CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './dashboard-user.component.html',
   styleUrls: ['./dashboard-user.component.css']
 })
@@ -17,8 +18,7 @@ export class DashboardUserComponent implements OnInit {
   contacts: Contacts[] = [];
   editContactForm: FormGroup;
   newContactForm: FormGroup;
-  editingContact: Contacts | null = null;
-  showAddContactFormFlag = false;
+  editingContact: Contacts | null | boolean = null;
 
   constructor(private apiContactsService: ApiContactsService, private fb: FormBuilder) {
     this.editContactForm = this.fb.group({
@@ -54,15 +54,8 @@ export class DashboardUserComponent implements OnInit {
     );
   }
 
-  // Función para mostrar el formulario de agregar contacto
-  showAddContactForm(): void {
-    this.showAddContactFormFlag = true;
-  }
-
-  // Función para ocultar el formulario de agregar contacto
-  hideAddContactForm(): void {
-    this.showAddContactFormFlag = false;
-    this.newContactForm.reset();
+  hiddenFormEdit() {
+    this.editingContact = false;
   }
 
   // Nueva función para agregar un contacto

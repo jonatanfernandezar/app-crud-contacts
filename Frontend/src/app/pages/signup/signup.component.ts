@@ -4,16 +4,24 @@ import { FormBuilder, FormGroup, FormGroupName, ReactiveFormsModule, Validators 
 import { matchPasswords } from '../../utils/matchValidator';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/users.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
 
 export class SignupComponent {
+
+  // Esto es para el responsive del Navbar.
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
   // Formulario reactivo para el Sign-Up.
   formularioSignUp: FormGroup;

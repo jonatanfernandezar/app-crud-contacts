@@ -146,6 +146,16 @@
   .button-icon-facebook:hover {
     background-color: palevioletred;
   }
+
+  .container-buttons-create-contact {
+    display: flex;
+    gap: 20px;
+  }
+
+  .container-buttons-create-contact button:hover {
+    background-color: palevioletred;
+  } 
+  
   
   /* Alertas de validaciones en el Sign Up*/
   .text-danger {

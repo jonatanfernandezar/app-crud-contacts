@@ -43,7 +43,10 @@
           </div>
 
           <!-- Boton de crear contacto -->
-          <button type="submit" [disabled]="formularioCreateContact.invalid">Create</button>
+           <div class="container-buttons-create-contact">
+            <button type="submit" [disabled]="formularioCreateContact.invalid">Create</button>
+            <button type="button" [routerLink]="['/dashboard-user']" routerLinkActive="router-link-active">Cancel</button>
+           </div>
         </form>
 
       </div>

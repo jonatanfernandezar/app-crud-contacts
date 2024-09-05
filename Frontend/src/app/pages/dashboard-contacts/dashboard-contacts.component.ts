@@ -4,11 +4,12 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router } from '@angular/router';
 import { UserService } from '../../services/users.service';
 import { ApiContactsService } from '../../services/api-contacts.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-contacts',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './dashboard-contacts.component.html',
   styleUrl: './dashboard-contacts.component.css'
 })

@@ -10,7 +10,7 @@ Tiene una API hecha en Express que me guarda los usuarios registrados, y tiene u
 ## Conceptos claves y fundamentos de Angular que se usaron:
 
 Se usaron servicios para inyectar logica a los componentes, un servicio se ocupará de la auth de los usuarios, y el otro servicio se ocupara de los contactos.
-Se usa navegación para el redireccionamiento entre las páginas Home, Login, SignUp y la Dashboard.
+Se usa navegación para el redireccionamiento entre las páginas Home, Login, SignUp y la Dashboard, observables de rxjs, interfaces para tipar los datos entre otras cosas.
 
 ## Pasos para inicializar el proyecto:
 

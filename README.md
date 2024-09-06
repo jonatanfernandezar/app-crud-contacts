@@ -1,4 +1,5 @@
 ## Imagenes del proyecto:
+Estas son las imagenes de la interfaz del proyecto hecho en Angular, Express y MySQL.
 
 ## Login: 
 ![LoginCRUD](https://github.com/user-attachments/assets/d492202a-de08-4132-a04a-0c77354b0687)

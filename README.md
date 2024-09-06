@@ -1,3 +1,17 @@
+
+## Demo parte 1 (2 min)
+
+https://github.com/user-attachments/assets/e7eeddfd-17ba-45ed-a0be-97e36129fa3e
+
+## Demo parte 2 (2 min)
+
+https://github.com/user-attachments/assets/f3dcbf91-33ce-4f0c-8bf4-2bac06608a57
+
+## Demo parte 3 (2 min)
+
+https://github.com/user-attachments/assets/dc4ed1e9-908d-4526-9f59-cb9252606025
+
+
 ## Imagenes del proyecto:
 Estas son las imagenes de la interfaz del proyecto hecho en Angular, Express y MySQL.
 

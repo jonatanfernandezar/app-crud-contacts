@@ -1,9 +1,18 @@
 ## Imagenes del proyecto:
 
+## Login: 
 ![LoginCRUD](https://github.com/user-attachments/assets/d492202a-de08-4132-a04a-0c77354b0687)
+
+## Sign up:
 ![SignupCRUD](https://github.com/user-attachments/assets/2263b614-c9f9-4375-8377-e6fb78884e69)
+
+## Dashboard:
 ![DashboardCRUD](https://github.com/user-attachments/assets/887d6100-2650-4c85-9d57-3347d9fa83f8)
+
+## Crear contacto:
 ![CreateContactCRUD](https://github.com/user-attachments/assets/5f9bdf91-a9ee-4e6f-8824-5351bf942368)
+
+## Editar contacto.
 ![EditContactCRUD](https://github.com/user-attachments/assets/f4ac7677-b6d6-43e4-9b66-3252c96237c1)
 ## Proyecto CRUD de Contacts con Angular y Express + MySQL
 

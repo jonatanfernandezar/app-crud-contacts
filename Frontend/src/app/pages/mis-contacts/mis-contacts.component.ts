@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './mis-contacts.component.html',
   styleUrl: './mis-contacts.component.css'
 })
+
 export class MisContactsComponent implements OnInit {
   contacts: Contacts[] = [];
 

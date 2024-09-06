@@ -1,4 +1,4 @@
-## Proyecto CRUD de contacts con Angular y Express.
+## Proyecto CRUD de Contacts con Angular y Express + MySQL
 
 En este proyecto se desarrollo una aplicacion CRUD que crea, lee, actualiza y elimina contactos, es decir, le da la posibilidad a los usuarios de poder gestionar sus contactos telefonicos y tener una reseña de ellos.
 
